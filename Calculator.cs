@@ -24,6 +24,7 @@ namespace ConsoleCalc
                 '*' => num1 * num2,
                 '/' => num1 / num2,
                 '%' => num1 % num2,
+                _ => num1 + num2;
             };
         }
 
@@ -43,7 +44,8 @@ namespace ConsoleCalc
         private string GetInput()
         {
             Console.WriteLine($"Please type the expression to evaluate:");
-            return Console.ReadLine();
+            string result = result is null ? "" : result;
+            return result;
         }
 
         private List<char> SplitInput(string input)
